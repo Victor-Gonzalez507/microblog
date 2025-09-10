@@ -1,0 +1,26 @@
+   18  git init
+   19  git config --global user.name "Victor-Gonzalez507"
+   20  git config --global user.email "VGONZALEZ1@HCC-ND.EDU"
+   21  git config --global init.defaultBranch main
+   22  git config --global credential.helper store
+   23  git remote add origin https://github.com/Victor-Gonzalez507/microblog.git
+   25  touch .gitignore
+   26  git add README.md
+   27  git commit -m "Initial commit"
+   28  git push origin main
+   29  git branch
+   30  git branch -m master main
+   31  git push origin main
+   62  git add .
+   67  git init
+   68  git config --global user.name "Victor-Gonzalez507"
+   69  git config --global user.email "VGONZALEZ1@HCC-ND.EDU"
+   70  git config --global init.defaultBranch main
+   71  git config --global credential.helper store
+   72  git remote add origin https://github.com/Victor-Gonzalez507/microblog.git
+   73  git add .
+   74  git status
+   75  git commit -m "chapter 1"
+   76  git push origin main
+   77  git push origin main --force
+   99  history | grep git >> gitCommandstxt
