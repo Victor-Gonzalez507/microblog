@@ -1,12 +1,12 @@
 from flask import Flask
-from config import Config
+import logging
+from logging.handlers import SMTPHandler, RotatingFileHandler
+import os
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-import logging
-from logging.handlers import SMTPHandler
-from logging.handlers import RotatingFileHandler
-import os
+from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -33,6 +33,7 @@ if not app.debug:
         )
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
+
     if not os.path.exists("logs"):
         os.mkdir("logs")
     file_handler = RotatingFileHandler(
@@ -48,6 +49,5 @@ if not app.debug:
 
     app.logger.setLevel(logging.INFO)
     app.logger.info("Microblog startup")
-
 
 from app import routes, models, errors
