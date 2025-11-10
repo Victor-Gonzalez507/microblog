@@ -132,3 +132,5 @@ class Post(db.Model):
 
     def __repr__(self):
         return "<Post {}>".format(self.body)
+
+    language: so.Mapped[Optional[str]] = so.mapped_column(sa.String(5))
