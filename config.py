@@ -25,3 +25,5 @@ class Config:
     POSTS_PER_PAGE = 3
 
     LANGUAGES = ["en", "es"]
+    ELASTICSEARCH_URL = os.environ.get("ELASTICSEARCH_URL")
+    WHOOSH_ENABLED = True
